@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --black: #000000;
+}
+
+.bg-black-100 {
+  background-color: var(--black);
+}
