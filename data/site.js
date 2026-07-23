@@ -1,7 +1,7 @@
 export const site = {
   name: "Wafi Wahid",
 
-  role: "Full-Stack Developer & AI Automation Engineer",
+  role: "Full-Stack Developer & AI Engineer",
 
   location: "Islamabad, Pakistan · Available Worldwide",
 
