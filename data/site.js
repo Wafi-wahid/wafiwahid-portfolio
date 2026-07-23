@@ -1,42 +1,60 @@
 export const site = {
   name: "Wafi Wahid",
-  role: "Full-Stack Developer",
-  location: "Building for the web",
-  title: "Wafi Wahid — Full-Stack Developer",
+
+  role: "Full-Stack Developer & AI Automation Engineer",
+
+  location: "Islamabad, Pakistan · Available Worldwide",
+
+  title: "Wafi Wahid | Full-Stack Developer & AI Automation Engineer",
+
   description:
-    "Full-stack developer exploring DevOps, AI/ML, and Blockchain. Building modern web experiences with clean, scalable code.",
-  email: "hello@wafiwahid.dev",
-  phone: "+1 (000) 000-0000",
-  address: "Available worldwide · Remote",
-  greeting: "I am Wafi Wahid",
-  headline: ["Full-Stack Developer", "Product Builder"],
+    "I help startups and businesses build scalable web applications, AI-powered solutions, and workflow automations using modern technologies.",
+
+  // Use your actual email
+  email: "wafiwahid26@gmail.com",
+
+  // Use your real phone or remove it
+  phone: "",
+
+  address: "Available Worldwide · Remote",
+
+  greeting: "Hi, I'm Wafi Wahid",
+
+  headline: [
+    "Full-Stack Developer",
+    "AI Automation Engineer"
+  ],
+
   tagline:
-    "I design and ship modern web products with clarity, performance, and scalable architecture.",
+    "Building scalable web applications, AI solutions, and automations that save businesses time and help them grow.",
+
   about:
-    "I'm a full-stack developer who enjoys solving problems and learning new technologies. I'm exploring DevOps, AI/ML, and Blockchain. I believe in simplicity, clarity, and writing clean code that scales.",
-  cvUrl: "#contact",
+    "I'm a Full-Stack Developer and AI Automation Engineer passionate about solving real business problems through technology. I build modern web applications, AI-powered tools, and workflow automations using React, Next.js, Node.js, TypeScript, Firebase, MongoDB, and modern cloud technologies. Currently helping founders and startups turn ideas into reliable digital products.",
+
+    resume: "/resume.pdf",
+    cvUrl: "#contact",
   logo: "/LOGO.png",
   headshot: "/headshot.jpg",
   social: {
-    github: "https://github.com/wafiwahid",
+    github: "https://github.com/Wafi-wahid",
     linkedin: "https://linkedin.com/in/wafiwahid26",
     fiverr: "https://www.fiverr.com/wafiwahid",
     upwork: "https://www.upwork.com/freelancers/~wafiwahid",
   },
   stats: [
-    { value: "3+", label: "Years Experience" },
-    { value: "20+", label: "Projects Completed" },
-    { value: "10+", label: "Happy Clients" },
-    { value: "5+", label: "Tech Stacks" },
+    { value: "20+", label: "Projects Built" },
+    { value: "3+", label: "Years Learning & Building" },
+    { value: "10+", label: "Technologies Used" },
+    { value: "3K+", label: "LinkedIn Community" },
   ],
   pills: ["Full-Stack", "DevOps", "AI / ML", "Problem Solver"],
   marquee: [
-    "Web Development",
-    "App Design",
+   "Web Development",
+    "AI Automation",
+    "SaaS Development",
     "DevOps",
-    "AI / ML",
-    "Blockchain",
-    "Product Engineering",
+    "Mobile Apps",
+    "Product Engineering"
   ],
   nav: [
     { href: "#services", label: "Services" },
@@ -65,42 +83,55 @@ export const site = {
       description:
         "CI/CD pipelines, GitOps habits, and cloud-ready deployments that keep shipping fast and safe.",
     },
+  
     {
       number: "04",
-      title: "AI-Powered Features",
+      title: "AI Automation",
       description:
-        "Practical NLP and ML integrations—chatbots, assistants, and smart workflows that add real value.",
+        "AI chatbots, workflow automation, API integrations, and business process automation using modern AI tools.",
+    },
+    {
+      number: "05",
+      title: "Mobile App Development",
+      description:
+        "Cross-platform mobile applications with React Native and Firebase for startups and businesses.",
+    },
+    {
+      number: "06",
+      title: "MVP & SaaS Development",
+      description:
+        "Rapid MVP development for founders—from idea validation to production-ready SaaS applications.",
     },
   ],
   projectFilters: ["All", "AI", "Mobile", "Web"],
   projects: [
     {
-      title: "AI Mental Health Assistant",
+      title: "AlumSphere",
       description:
-        "NLP-powered chatbot offering emotional support, journaling, and therapy recommendations.",
-      category: "AI",
-      tags: ["NLP", "AI", "Chatbot"],
+        "AI-powered alumni networking platform with mentorship, real-time messaging, job portal, and event management.",
+      category: "Web",
+      tags: ["React", "Node.js", "MongoDB", "TypeScript"],
     },
     {
-      title: "React Native Chat App",
+      title: "ChitChat",
       description:
-        "Real-time messaging app with Firebase backend and sleek minimalist UI.",
+        "Real-time messaging application built with React Native and Firebase featuring AI-powered chat assistance.",
       category: "Mobile",
-      tags: ["React Native", "Firebase", "Realtime"],
+      tags: ["React Native", "Firebase", "AI"],
     },
     {
-      title: "Portfolio Platform",
+      title: "My TrukTuck",
       description:
-        "Static Next.js portfolio with theme support, smooth sections, and GitHub Pages-ready export.",
+        "Modern logistics platform connecting customers with transport services through an intuitive web platform.",
       category: "Web",
-      tags: ["Next.js", "Tailwind", "Static"],
+      tags: ["React", "Express", "MongoDB"],
     },
     {
-      title: "DevOps Dashboard",
+      title: "SmartTrack",
       description:
-        "Pipeline visibility and deployment status for teams embracing automation and GitOps.",
+        "Productivity management application helping users organize tasks, goals, and daily workflows efficiently.",
       category: "Web",
-      tags: ["CI/CD", "Dashboards", "DevOps"],
+      tags: ["React", "TypeScript", "Firebase"],
     },
   ],
   experience: [
@@ -118,13 +149,13 @@ export const site = {
   education: [
     {
       period: "Ongoing",
-      title: "DevOps · AI/ML · Blockchain",
+      title: "AI/ML · Blockchain",
       place: "Self-directed learning",
     },
     {
-      period: "Foundation",
-      title: "Computer Science & Engineering",
-      place: "Formal study & practice",
+      period: "2022 — 2026",
+    title: "BS Software Engineering",
+    place: "Riphah International University",
     },
   ],
   skillLevels: [
