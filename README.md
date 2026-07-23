@@ -1,6 +1,6 @@
 # Wafi Wahid — Developer Portfolio
 
-Next.js static portfolio (App Router + Tailwind). Built for free static hosting (e.g. GitHub Pages).
+Next.js static portfolio with a purple professional theme, light/dark modes, and mobile-responsive layout. Built for free static hosting (e.g. GitHub Pages).
 
 ## Local development
 
@@ -20,8 +20,8 @@ npm run preview
 
 `next build` writes static files to `out/`. Preview serves that folder. Confirm:
 
-- Hero, About, Projects, Blog, Contact render
-- Nav smooth-scrolls to sections
+- Hero, services, works, resume, skills, blog, and contact render
+- Nav works on desktop and mobile (hamburger)
 - Dark/light theme persists after refresh
 - Contact opens your mail client via `mailto:`
 
@@ -33,4 +33,9 @@ npm run preview
 
 ## Edit content
 
-Update copy, projects, and posts in [`data/site.js`](data/site.js).
+Update copy, projects, services, and posts in [`data/site.js`](data/site.js).
+
+## Add your headshot
+
+1. Drop your photo into [`public/`](public/) as `headshot.jpg` (or `.png` / `.webp`)
+2. Keep `headshot` in `data/site.js` matching that filename, e.g. `"/headshot.jpg"`

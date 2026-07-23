@@ -1,17 +1,27 @@
 @import "tailwindcss";
 
+@source "../components/**/*.{js,jsx}";
+@source "../data/**/*.{js,jsx}";
+@source "./**/*.{js,jsx}";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
-  --color-accent: #0d9488;
-  --color-accent-hover: #0f766e;
-  --color-ink: #0c1222;
-  --color-muted: #5b657a;
-  --color-surface: #f3f6fb;
+  --font-display: var(--font-syne), "Segoe UI", sans-serif;
+  --font-sans: var(--font-dm), "Segoe UI", sans-serif;
+  --color-brand: #8750f7;
+  --color-brand-deep: #2a1454;
+  --color-ink: #1a1025;
+  --color-muted: #6b6280;
+  --color-surface: #f7f4ff;
   --color-panel: #ffffff;
-  --color-line: #d8e0ec;
+  --color-line: #e6dff5;
+  --color-hero-glow: rgba(135, 80, 247, 0.35);
+}
+
+/* Ensure display font utility always exists */
+.font-display {
+  font-family: var(--font-display);
 }
 
 :root {
@@ -20,11 +30,12 @@
 
 .dark {
   color-scheme: dark;
-  --color-ink: #e8eef8;
-  --color-muted: #9aa8bd;
-  --color-surface: #0b1220;
-  --color-panel: #121a2b;
-  --color-line: #243049;
+  --color-ink: #f4efff;
+  --color-muted: #b7accf;
+  --color-surface: #0f0715;
+  --color-panel: #1a0f24;
+  --color-line: #2d2040;
+  --color-hero-glow: rgba(135, 80, 247, 0.45);
 }
 
 html {
@@ -36,53 +47,101 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   color: var(--color-ink);
-  background-color: var(--color-surface);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(13, 148, 136, 0.18), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(37, 99, 235, 0.08), transparent 50%),
-    linear-gradient(180deg, transparent 0%, var(--color-surface) 40%);
+  background: var(--color-surface);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dark body,
-.dark {
-  background-image:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(13, 148, 136, 0.22), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(59, 130, 246, 0.12), transparent 50%),
-    linear-gradient(180deg, transparent 0%, var(--color-surface) 40%);
-}
-
 ::selection {
-  background: rgba(13, 148, 136, 0.25);
+  background: rgba(135, 80, 247, 0.28);
 }
 
-.fade-in {
-  animation: fadeIn 0.7s ease-out both;
+.bg-page {
+  background-image:
+    radial-gradient(ellipse 70% 45% at 85% 8%, var(--color-hero-glow), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 0% 20%, rgba(135, 80, 247, 0.12), transparent 50%);
 }
 
-@keyframes fadeIn {
+.gradient-text {
+  background: linear-gradient(90deg, #8750f7, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(90deg, #8750f7, #6d28d9);
+  box-shadow: 0 10px 30px rgba(135, 80, 247, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(135, 80, 247, 0.45);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  text-decoration: none;
+  border: 1px solid var(--color-brand);
+  background: transparent;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(135, 80, 247, 0.1);
+  transform: translateY(-2px);
+}
+
+.section-kicker {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.card-surface {
+  border: 1px solid var(--color-line);
+  background: var(--color-panel);
+  border-radius: 1.25rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+@keyframes marquee {
   from {
-    opacity: 0;
-    transform: translateY(14px);
+    transform: translateX(0);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%);
   }
 }
 
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes drift {
+@keyframes floaty {
   0%,
   100% {
     transform: translateY(0);
@@ -92,10 +151,35 @@ body {
   }
 }
 
-.animate-rise {
-  animation: rise 0.85s ease-out both;
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.animate-drift {
-  animation: drift 6s ease-in-out infinite;
+.animate-float {
+  animation: floaty 5.5s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.75s ease-out both;
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(135, 80, 247, 0.25),
+    0 20px 60px rgba(135, 80, 247, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .animate-float,
+  .animate-fade-up {
+    animation: none;
+  }
 }

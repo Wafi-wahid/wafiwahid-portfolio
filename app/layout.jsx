@@ -1,16 +1,16 @@
-import { Fraunces, Outfit } from "next/font/google";
+import { Syne, DM_Sans } from "next/font/google";
 import { site } from "@/data/site";
 import "./globals.css";
 
-const display = Fraunces({
+const display = Syne({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-syne",
   display: "swap",
 });
 
-const body = Outfit({
+const body = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-dm",
   display: "swap",
 });
 
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className="antialiased font-sans">{children}</body>
+      <body className="bg-page antialiased font-sans">{children}</body>
     </html>
   );
 }
