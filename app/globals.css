@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
+  --color-accent: #0d9488;
+  --color-accent-hover: #0f766e;
+  --color-ink: #0c1222;
+  --color-muted: #5b657a;
+  --color-surface: #f3f6fb;
+  --color-panel: #ffffff;
+  --color-line: #d8e0ec;
+}
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-ink: #e8eef8;
+  --color-muted: #9aa8bd;
+  --color-surface: #0b1220;
+  --color-panel: #121a2b;
+  --color-line: #243049;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(13, 148, 136, 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(37, 99, 235, 0.08), transparent 50%),
+    linear-gradient(180deg, transparent 0%, var(--color-surface) 40%);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body,
+.dark {
+  background-image:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(13, 148, 136, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 0%, rgba(59, 130, 246, 0.12), transparent 50%),
+    linear-gradient(180deg, transparent 0%, var(--color-surface) 40%);
+}
+
+::selection {
+  background: rgba(13, 148, 136, 0.25);
+}
+
+.fade-in {
+  animation: fadeIn 0.7s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-rise {
+  animation: rise 0.85s ease-out both;
+}
+
+.animate-drift {
+  animation: drift 6s ease-in-out infinite;
+}

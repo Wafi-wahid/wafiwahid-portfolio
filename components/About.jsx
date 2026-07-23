@@ -1,16 +1,23 @@
-import React from "react";
+import { site } from "@/data/site";
 
-const About = () => {
+export default function About() {
   return (
-    <section id="about" className="py-16 px-4 text-center fade-in">
-      <h2 className="text-3xl font-semibold mb-6">About Me</h2>
-      <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-        I’m a full-stack developer who enjoys solving problems and learning new
-        technologies. I'm exploring DevOps, AI/ML, and Blockchain. I believe in
-        simplicity, clarity, and writing clean code that scales.
+    <section id="about" className="fade-in mx-auto max-w-5xl px-5 py-20 md:px-8">
+      <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">About</h2>
+      <p className="mt-2 max-w-2xl text-[var(--color-muted)]">Who I am and what I care about.</p>
+      <p className="mt-8 max-w-2xl text-lg leading-relaxed text-[var(--color-ink)]">
+        {site.about}
       </p>
+      <ul className="mt-10 flex flex-wrap gap-3">
+        {site.skills.map((skill) => (
+          <li
+            key={skill}
+            className="border border-[var(--color-line)] bg-[var(--color-panel)] px-3 py-1.5 text-sm text-[var(--color-muted)]"
+          >
+            {skill}
+          </li>
+        ))}
+      </ul>
     </section>
   );
-};
-
-export default About;
+}

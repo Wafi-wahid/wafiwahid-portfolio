@@ -1,27 +1,33 @@
-import React from "react";
+import { site } from "@/data/site";
 
-const Projects = () => {
+export default function Projects() {
   return (
-    <section id="projects" className="py-16 px-4 text-center fade-in">
-      <h2 className="text-3xl font-semibold mb-6">Projects</h2>
-      <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
-        <div className="border rounded-lg p-4 shadow hover:shadow-lg dark:bg-slate-700">
-          <h3 className="text-xl font-semibold">AI Mental Health Assistant</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-            NLP-powered chatbot offering emotional support, journaling, and
-            therapy recommendations.
-          </p>
-        </div>
-        <div className="border rounded-lg p-4 shadow hover:shadow-lg dark:bg-slate-700">
-          <h3 className="text-xl font-semibold">React Native Chat App</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-            Real-time messaging app with Firebase backend and sleek minimalist
-            UI.
-          </p>
-        </div>
+    <section id="projects" className="fade-in mx-auto max-w-5xl px-5 py-20 md:px-8">
+      <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">Projects</h2>
+      <p className="mt-2 max-w-2xl text-[var(--color-muted)]">
+        Selected work across AI, mobile, and product engineering.
+      </p>
+
+      <div className="mt-12 grid gap-8 md:grid-cols-2">
+        {site.projects.map((project) => (
+          <article
+            key={project.title}
+            className="border-t border-[var(--color-line)] pt-6 transition hover:border-[var(--color-accent)]"
+          >
+            <h3 className="font-display text-xl font-semibold text-[var(--color-ink)]">
+              {project.title}
+            </h3>
+            <p className="mt-3 leading-relaxed text-[var(--color-muted)]">{project.description}</p>
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <li key={tag} className="text-xs uppercase tracking-wider text-[var(--color-accent)]">
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Projects;
+}
