@@ -35,7 +35,6 @@ export const site = {
     "App Design",
     "DevOps",
     "AI / ML",
-    "Blockchain",
     "Product Engineering",
   ],
   nav: [
@@ -43,7 +42,6 @@ export const site = {
     { href: "#projects", label: "Works" },
     { href: "#resume", label: "Resume" },
     { href: "#skills", label: "Skills" },
-    { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
   ],
   services: [
@@ -74,34 +72,34 @@ export const site = {
   ],
   projectFilters: ["All", "AI", "Mobile", "Web"],
   projects: [
-    {
-      title: "AI Mental Health Assistant",
-      description:
-        "NLP-powered chatbot offering emotional support, journaling, and therapy recommendations.",
-      category: "AI",
-      tags: ["NLP", "AI", "Chatbot"],
-    },
-    {
-      title: "React Native Chat App",
-      description:
-        "Real-time messaging app with Firebase backend and sleek minimalist UI.",
-      category: "Mobile",
-      tags: ["React Native", "Firebase", "Realtime"],
-    },
-    {
-      title: "Portfolio Platform",
-      description:
-        "Static Next.js portfolio with theme support, smooth sections, and GitHub Pages-ready export.",
-      category: "Web",
-      tags: ["Next.js", "Tailwind", "Static"],
-    },
-    {
-      title: "DevOps Dashboard",
-      description:
-        "Pipeline visibility and deployment status for teams embracing automation and GitOps.",
-      category: "Web",
-      tags: ["CI/CD", "Dashboards", "DevOps"],
-    },
+      {
+    title: "AlumSphere",
+    description:
+      "AI-powered alumni networking platform with mentorship, real-time messaging, job portal, and event management.",
+    category: "Web",
+    tags: ["React", "Node.js", "MongoDB", "TypeScript"],
+  },
+  {
+    title: "ChitChat",
+    description:
+      "Real-time messaging application built with React Native and Firebase featuring AI-powered chat assistance.",
+    category: "Mobile",
+    tags: ["React Native", "Firebase", "AI"],
+  },
+  {
+    title: "My TrukTuck",
+    description:
+      "Modern logistics platform connecting customers with transport services through an intuitive web platform.",
+    category: "Web",
+    tags: ["React", "Express", "MongoDB"],
+  },
+  {
+    title: "SmartTrack",
+    description:
+      "Productivity management application helping users organize tasks, goals, and daily workflows efficiently.",
+    category: "Web",
+    tags: ["React", "TypeScript", "Firebase"],
+  },
   ],
   experience: [
     {
@@ -147,26 +145,6 @@ export const site = {
         "Reliable engineering with strong attention to performance, UX, and maintainable code.",
       name: "Engineering Lead",
       role: "Remote Team",
-    },
-  ],
-  posts: [
-    {
-      title: "Deep Dive into DevOps",
-      excerpt:
-        "Exploring pipelines, CI/CD, GitOps, and why every developer should embrace automation.",
-      date: "2025",
-    },
-    {
-      title: "The T-Shape Advantage",
-      excerpt:
-        "Why being both a specialist and a generalist can make you unstoppable in tech.",
-      date: "2025",
-    },
-    {
-      title: "Shipping Static Portfolios",
-      excerpt:
-        "How Next.js static export keeps a developer site fast, free, and easy to host.",
-      date: "2026",
     },
   ],
 };
