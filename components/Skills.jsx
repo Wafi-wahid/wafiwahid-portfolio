@@ -1,8 +1,19 @@
+"use client";
+
 import { site } from "@/data/site";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Skills() {
+  const [sectionRef, isSectionVisible] = useScrollAnimation();
+
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <section 
+      ref={sectionRef}
+      id="skills" 
+      className={`mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28 transition-all duration-700 ${
+        isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
+    >
       <div className="max-w-2xl">
         <p className="section-kicker">My skills</p>
         <h2 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)] md:text-5xl">

@@ -3,7 +3,7 @@ import { site } from "@/data/site";
 
 export default function HeroPortrait() {
   return (
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--color-panel)]">
+    <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-[var(--color-panel)] scale-75">
       <Image
         src={site.headshot}
         alt={`${site.name} headshot`}

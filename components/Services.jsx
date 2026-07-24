@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { site } from "@/data/site";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Services() {
   const [active, setActive] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [sectionRef, isSectionVisible] = useScrollAnimation();
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -50,7 +52,13 @@ export default function Services() {
   };
 
   return (
-    <section id="services" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+    <section 
+      ref={sectionRef}
+      id="services" 
+      className={`mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28 transition-all duration-700 ${
+        isSectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+      }`}
+    >
       <div className="max-w-2xl">
         <p className="section-kicker">My quality services</p>
         <h2 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)] md:text-5xl">

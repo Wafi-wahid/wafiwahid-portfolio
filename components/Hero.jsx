@@ -11,8 +11,8 @@ const pillPositions = [
 
 export default function Hero() {
   return (
-    <section id="hero" className="mx-auto max-w-6xl px-5 pb-16 pt-10 md:px-8 md:pb-24 md:pt-16">
-      <div className="grid items-center gap-12 lg:grid-cols-2">
+    <section id="hero" className="mx-auto max-w-6xl px-5 pb-16 pt-24 md:px-8 md:pb-24 md:pt-28">
+      <div className="grid items-center gap-8 lg:grid-cols-2">
         <div className="animate-fade-up">
           <p className="section-kicker">{site.greeting}</p>
           <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-[var(--color-ink)] sm:text-5xl md:text-6xl">
@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="relative mx-auto w-full max-w-md animate-fade-up lg:max-w-none">
           <div className="absolute inset-6 -z-10 rounded-full bg-[radial-gradient(circle,rgba(135,80,247,0.45),transparent_68%)] blur-2xl" />
 
-          <div className="glow-ring relative rounded-[2rem] border border-[var(--color-line)] bg-[var(--color-panel)] p-3">
+          <div className="glow-ring relative scale-75 rounded-[2rem] border border-[var(--color-line)] bg-[var(--color-panel)] p-3">
             <HeroPortrait />
           </div>
 
