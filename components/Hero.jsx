@@ -25,8 +25,8 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <a href={site.cvUrl} className="btn-primary">
-              Download CV
+            <a href="#contact" className="btn-primary">
+              Book a Free Consultation
             </a>
             <a href="#projects" className="btn-outline">
               View my work

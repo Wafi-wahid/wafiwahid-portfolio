@@ -12,7 +12,7 @@ export default function Footer() {
             href="#contact"
             className="mt-6 inline-flex rounded-full bg-white px-6 py-3 text-sm font-bold text-[#6d28d9] no-underline transition hover:scale-[1.02] md:mt-0"
           >
-            Hire Me
+            Book a Free Consultation
           </a>
         </div>
       </div>

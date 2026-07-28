@@ -79,7 +79,7 @@ export default function Navbar() {
             {darkMode ? "Light" : "Dark"}
           </button>
           <a href="#contact" className="btn-primary hidden sm:inline-flex">
-            Hire Me
+            Let's Talk
           </a>
           <button
             type="button"
@@ -112,7 +112,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-2 w-full">
-              Hire Me
+              Book a Free Consultation
             </a>
           </div>
         </div>

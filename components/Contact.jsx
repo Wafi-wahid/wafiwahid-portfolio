@@ -5,11 +5,13 @@ import { site } from "@/data/site";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
-    phone: "",
-    message: "",
+    company: "",
+    projectType: "",
+    budget: "",
+    timeline: "",
+    projectDetails: "",
   });
 
   const handleChange = (e) => {
@@ -19,16 +21,19 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const subject = encodeURIComponent(
-      `Portfolio inquiry from ${formData.firstName} ${formData.lastName}`.trim()
+      `Portfolio inquiry from ${formData.fullName}`.trim()
     );
     const body = encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\n${formData.message}`
+      `Name: ${formData.fullName}\nEmail: ${formData.email}\nCompany: ${formData.company}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.projectDetails}`
     );
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
   };
 
   const fieldClass =
     "w-full rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-ink)] outline-none transition focus:border-[var(--color-brand)]";
+  
+  const selectClass =
+    "w-full rounded-xl border border-[var(--color-line)] bg-[var(--color-surface)] px-4 py-3 text-[var(--color-ink)] outline-none transition focus:border-[var(--color-brand)] appearance-none cursor-pointer";
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
@@ -41,41 +46,90 @@ export default function Contact() {
 
           <form onSubmit={handleSubmit} className="mt-8 grid gap-4 sm:grid-cols-2">
             <input
-              className={fieldClass}
-              name="firstName"
-              placeholder="First name"
-              value={formData.firstName}
+              className={`${fieldClass} sm:col-span-2`}
+              name="fullName"
+              placeholder="Full Name *"
+              value={formData.fullName}
               onChange={handleChange}
               required
             />
             <input
-              className={fieldClass}
-              name="lastName"
-              placeholder="Last name"
-              value={formData.lastName}
-              onChange={handleChange}
-            />
-            <input
-              className={fieldClass}
+              className={`${fieldClass} sm:col-span-2`}
               type="email"
               name="email"
-              placeholder="Email address"
+              placeholder="Email *"
               value={formData.email}
               onChange={handleChange}
               required
             />
             <input
-              className={fieldClass}
-              name="phone"
-              placeholder="Phone number"
-              value={formData.phone}
+              className={`${fieldClass} sm:col-span-2`}
+              name="company"
+              placeholder="Company (optional)"
+              value={formData.company}
               onChange={handleChange}
             />
+            <div className="relative sm:col-span-2">
+              <select
+                className={selectClass}
+                name="projectType"
+                value={formData.projectType}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Project Type *</option>
+                <option value="AI Automation">AI Automation</option>
+                <option value="Full-Stack Web App">Full-Stack Web App</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="MVP Development">MVP Development</option>
+                <option value="Bug Fix">Bug Fix</option>
+                <option value="Consultation">Consultation</option>
+                <option value="Other">Other</option>
+              </select>
+              <svg className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--color-muted)] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div className="relative">
+              <select
+                className={selectClass}
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+              >
+                <option value="">Budget (optional)</option>
+                <option value="Under $500">Under $500</option>
+                <option value="$500–$1,000">$500–$1,000</option>
+                <option value="$1,000–$3,000">$1,000–$3,000</option>
+                <option value="$3,000+">$3,000+</option>
+                <option value="Let's discuss">Let's discuss</option>
+              </select>
+              <svg className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--color-muted)] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div className="relative">
+              <select
+                className={selectClass}
+                name="timeline"
+                value={formData.timeline}
+                onChange={handleChange}
+              >
+                <option value="">Timeline (optional)</option>
+                <option value="ASAP">ASAP</option>
+                <option value="Within a week">Within a week</option>
+                <option value="Within a month">Within a month</option>
+                <option value="Flexible">Flexible</option>
+              </select>
+              <svg className="absolute right-4 top-1/2 -translate-y-1/2 h-5 w-5 text-[var(--color-muted)] pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
             <textarea
               className={`${fieldClass} min-h-36 sm:col-span-2`}
-              name="message"
-              placeholder="Message"
-              value={formData.message}
+              name="projectDetails"
+              placeholder="Project Details *"
+              value={formData.projectDetails}
               onChange={handleChange}
               required
             />

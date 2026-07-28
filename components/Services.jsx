@@ -121,9 +121,29 @@ export default function Services() {
                       <h3 className="font-display text-2xl font-bold text-[var(--color-ink)] mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-[var(--color-muted)] leading-relaxed text-base">
+                      <p className="text-[var(--color-muted)] leading-relaxed text-base mb-6">
                         {service.description}
                       </p>
+                      <div className="flex flex-wrap gap-3">
+                        <a
+                          href="#projects"
+                          className="inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-[var(--color-panel)] px-4 py-2 text-xs font-semibold text-[var(--color-ink)] transition-all hover:border-[var(--color-brand)] hover:bg-[var(--color-surface)]"
+                        >
+                          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                          </svg>
+                          See relevant projects
+                        </a>
+                        <a
+                          href="#contact"
+                          className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#8750f7] to-[#6d28d9] px-4 py-2 text-xs font-semibold text-white transition-all hover:shadow-lg hover:scale-105"
+                        >
+                          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          </svg>
+                          Hire for this
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
